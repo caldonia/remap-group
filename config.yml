@@ -1,0 +1,7 @@
+config:
+  mapping:
+    first:
+      from: default
+      to: Visitor
+      announce: Please welcome $player, as they are now a $group! 
+      direct: Hello $player, you are now a $group.

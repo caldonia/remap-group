@@ -1,0 +1,7 @@
+name: CaldoniaRemapGroup
+version: 0.1.0
+main: net.caldonia.bukkit.plugins.RemapGroup.RGPlugin
+depend: [PermissionsBukkit]
+commands:
+  crg:
+    description: Caldonia Remap Groups Commands
