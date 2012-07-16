@@ -19,14 +19,14 @@ public class CRGCommandExecutor implements CommandExecutor {
                 commandSender.sendMessage("[CRG] Usage: /crg (reload|list)");
             } else {
                 if (strings[0].equalsIgnoreCase("reload")) {
-                    if (!(commandSender instanceof Player) || ((Player) commandSender).getPlayer().hasPermission("caldonia.default_group.reload")) {
+                    if (!(commandSender instanceof Player) || ((Player) commandSender).getPlayer().hasPermission("caldonia.remap_group.reload")) {
                         ourPlugin.loadConfig();
                         commandSender.sendMessage("[CRG] Reloaded configuration.");
                     } else {
                         commandSender.sendMessage("[CRG] Sorry, you do not have permission to do that.");
                     }
                 } else if (strings[0].equalsIgnoreCase("list")) {
-                    if (!(commandSender instanceof Player) || ((Player) commandSender).getPlayer().hasPermission("caldonia.default_group.list")) {
+                    if (!(commandSender instanceof Player) || ((Player) commandSender).getPlayer().hasPermission("caldonia.remap_group.list")) {
                         commandSender.sendMessage("[CRG] Mappings Configured:");
 
                         for (Mapping map : ourPlugin.getGroupMappings().values()) {

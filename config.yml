@@ -1,7 +1,12 @@
 config:
   mapping:
+    # A mapping must have a name, anything as long as it is YAML legal.
     first:
+      # From: The group which you wish to move away from. (REQUIRED)
       from: default
+      # To: The group which you wish to move to. (REQUIRED)
       to: Visitor
-      announce: Please welcome $player, as they are now a $group! 
+      # Announce: Upon log in the text will be broadcast to all users. (OPTIONAL)
+      announce: Please welcome $player, as they are now a $group!
+      # Direct: Upon log in the text will be sent to the player. (OPTIONAL)
       direct: Hello $player, you are now a $group.

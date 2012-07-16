@@ -1,0 +1,76 @@
+Caldonia Remap Group
+====================
+
+Description
+-----------
+
+This plugin is designed to permit automatic remapping of group membership upon
+a player logged into the server. It is only compatible with the
+PermissionsBukkit plugin.
+
+Impetus for Creating
+--------------------
+
+While setting up a server I hope to group I discovered that using
+PermissionsBukkit it was only possible for users to be placed in the "default"
+group upon first log in.
+
+This meant that while things such as iChat could be made to say "Visitor"
+instead of "default" there were many plugins which presented the "default"
+label.
+
+Plug In Abilities
+-----------------
+
+When a player logs in their group list is evaluated, should any of their group
+memberships match a remap, then that group will be deleted and the replacement
+added.
+
+Additionally the plugin can be configured to send a announcement to the server,
+and/or a message to the player.
+
+Commands
+--------
+/crg list
+List all current remaps loaded.
+
+/crg reload
+Reload configuration file.
+
+Permissions
+-----------
+Permissions you can add to your admins/staff, alternatively op's have them.
+
+caldonia.remap_group.list - Allows player to list all current remaps.
+caldonia.remap_group.reload - Allows player to reload configuration file.
+
+Caveat - DANGER! DANGER! Will Robinson
+--------------------------------------
+If you use it in the use case I designed it for you need to be aware that on
+a popular server your Visitor group membership will grow large, quickly.
+
+Regular deletion of the group membership is advised! This is one reason I
+suspect PermissionsBukkit doesn't support this out of the box. Although
+it could just permit you to specify which group is "default".
+
+Installation
+------------
+1 - Copy CaldoniaRemapGroup.jar to your plugins directory.
+2 - Restart/reload Bukkit.
+3 - Edit configuration file plugins/CaldoniaRemapGroup/config.yml.
+4 - Execute /crg reload in game or on the console.
+
+Default Configuration File
+--------------------------
+config:
+  mapping:
+    # A mapping must have a name, anything as long as it is YAML legal.
+    first:
+      # From: The group which you wish to move away from. (REQUIRED)
+      from: default
+      # To: The group which you wish to move to. (REQUIRED)
+      to: Visitor
+      # Announce: Upon log in the text will be broadcast to all users. (OPTIONAL)
+      announce: Please welcome $player, as they are now a $group!
+      # Direct: Upon log in the text will be sent to the player. (OPTIONAL)
+      direct: Hello $player, you are now a $group.
